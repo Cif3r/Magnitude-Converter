@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de unidades</title>
+    <link rel="stylesheet" href="/sass/index.css">
+
+
+</head>
+<body>
+
+    <div class="tab_intro">
+        <form class="inputs">
+            <h2 class="magnitud">Presion</h2>
+            <label for="">Convertir de:</label>
+
+            <input  class="input_presion">
+            <select name="input_unit" class="sele1">
+                <option class="titulo" disabled="disabled">Avoirdupois (EE.UU.)</option>
+
+                <option value="psi">Libra por pulgada cuadrada</option>
+                <option value="psf">Libra por pie cuadrado</option>
+                <option value="ksi">Kilolibra por pulgada cuadrada</option>
+
+            </select>
+
+            <div class="invert">
+                <a href="#" class="intercambio">
+                    <img src="/imgs/change.png" ro alt="icon_change">
+                </a>
+            </div>
+
+            <select name="output_unit" class="sele2">
+                <option class="titulo" disabled="disabled">Avoirdupois (EE.UU.)</option>
+
+                <option value="psi">Libra por pulgada cuadrada</option>
+                <option value="psf">Libra por pie cuadrado</option>
+                <option value="ksi">Kilolibra por pulgada cuadrada</option>
+            </select>
+
+            <div class="results">
+
+                <label  class="result uno">0</label>
+                <label  class="result dos">0</label>
+                
+            </div>
+            
+
+        </form>
+    </div>
+
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script src="js/optiones_selection.js"></script> 
+
+
+</body>
+</html>
