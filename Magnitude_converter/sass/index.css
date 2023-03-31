@@ -46,6 +46,14 @@ html body .tab_intro .inputs select {
   margin-bottom: 0.4rem;
   background-color: white;
 }
+html body .tab_intro .inputs select .titulo {
+  font-weight: bold;
+  font-size: 16px;
+  color: red;
+}
+html body .tab_intro .inputs select option {
+  font-size: 14px;
+}
 html body .tab_intro .inputs .invert {
   display: flex;
   justify-content: center;

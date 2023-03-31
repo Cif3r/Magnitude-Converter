@@ -16,13 +16,30 @@
             <h2 class="magnitud">Presion</h2>
             <label for="">Convertir de:</label>
 
-            <input  class="input_presion">
+            <input  class="input_presion" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 44">
             <select name="input_unit" class="sele1">
-                <option class="titulo" disabled="disabled">Avoirdupois (EE.UU.)</option>
-
-                <option value="psi">Libra por pulgada cuadrada</option>
-                <option value="psf">Libra por pie cuadrado</option>
-                <option value="ksi">Kilolibra por pulgada cuadrada</option>
+   
+                <option value="Pa">Pascal</option>
+                <option value="kPa">KiloPascal</option>
+                <option value="hPa">HectoPascal</option>
+                <option value="MPa">MegaPascal</option>
+                <option value="bar">Bar</option>
+                <option value="mbar">Milibar</option>
+                <option value="psi">Pound-force per square inch (psi)</option>
+                <option value="psf">Pound-force per square foot (psf)</option>
+                <option value="ksi">Kip per square inch (ksi)</option>
+                <option value="mH2O">Meter water column (mH2O)</option>
+                <option value="cmH2O">Centimeter water column (cmH2O)</option>
+                <option value="ftH2O">Foot water column (ftH2O)</option>
+                <option value="inH2O">Inch water column (inH2O)</option>
+                <option value="kgf_cm2">Kilogram-force per square centimeter (kgf/cm²)</option>
+                <option value="kgf_m2">Kilogram-force per square meter (kgf/m²)</option>
+                <option value="inHg">Inch mercury column (inHg)</option>
+                <option value="cmHg">Centimeter mercury column (cmHg)</option>
+                <option value="mmHg">Millimeter mercury column (mmHg)</option>
+                <option value="torr">Torr</option>
+                <option value="atm">Standard atmosphere (atm)</option>
+                
 
             </select>
 
@@ -33,11 +50,27 @@
             </div>
 
             <select name="output_unit" class="sele2">
-                <option class="titulo" disabled="disabled">Avoirdupois (EE.UU.)</option>
-
-                <option value="psi">Libra por pulgada cuadrada</option>
-                <option value="psf">Libra por pie cuadrado</option>
-                <option value="ksi">Kilolibra por pulgada cuadrada</option>
+                <option value="Pa">Pascal</option>
+                <option value="kPa">KiloPascal</option>
+                <option value="hPa">HectoPascal</option>
+                <option value="MPa">MegaPascal</option>
+                <option value="bar">Bar</option>
+                <option value="mbar">Milibar</option>
+                <option value="psi">Pound-force per square inch (psi)</option>
+                <option value="psf">Pound-force per square foot (psf)</option>
+                <option value="ksi">Kip per square inch (ksi)</option>
+                <option value="mH2O">Meter water column (mH2O)</option>
+                <option value="cmH2O">Centimeter water column (cmH2O)</option>
+                <option value="ftH2O">Foot water column (ftH2O)</option>
+                <option value="inH2O">Inch water column (inH2O)</option>
+                <option value="kgf_cm2">Kilogram-force per square centimeter (kgf/cm²)</option>
+                <option value="kgf_m2">Kilogram-force per square meter (kgf/m²)</option>
+                <option value="inHg">Inch mercury column (inHg)</option>
+                <option value="cmHg">Centimeter mercury column (cmHg)</option>
+                <option value="mmHg">Millimeter mercury column (mmHg)</option>
+                <option value="torr">Torr</option>
+                <option value="atm">Standard atmosphere (atm)</option>
+                
             </select>
 
             <div class="results">
