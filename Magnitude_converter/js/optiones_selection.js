@@ -8,7 +8,6 @@ function obtener(unit_intro, intro) {
 
   var Pa, kPa, hPa, MPa, bar, mbar, psi, psf, ksi, mH2O, cmH2O, ftH2O, inH2O, kgf_cm2, kgf_m2, inHg, cmHg, mmHg, torr, atm;
 
-
   if (unit_intro == 'Pa') {
     Pa = intro * 1;
     kPa = intro * 0.001;
@@ -449,34 +448,7 @@ function obtener(unit_intro, intro) {
     torr = intro * 760.131;
     atm = intro * 1;
   }
-
-
-
-
   return { Pa, kPa, hPa, MPa, bar, mbar, psi, psf, ksi, mH2O, cmH2O, ftH2O, inH2O, kgf_cm2, kgf_m2, inHg, cmHg, mmHg, torr, atm }
-}
-
-
-function contarUnidadesYDecimales(numero) {
-  let unidades = 0;
-  let decimales = 0;
-
-  let cadenaNumero = numero.toString();
-  let posicionPunto = cadenaNumero.indexOf(".");
-
-  if (posicionPunto === -1) {
-    // Si no hay punto decimal, se cuentan las unidades
-    while (numero !== 0) {
-      numero = Math.floor(numero / 10);
-      unidades++;
-    }
-  } else {
-    // Si hay punto decimal, se cuentan las unidades y los decimales
-    unidades = posicionPunto;
-    decimales = cadenaNumero.length - posicionPunto - 1;
-  }
-
-  return { unidades, decimales };
 }
 
 
@@ -488,8 +460,6 @@ function operacion(input_unit, output_unit) {
   var input_unit = input_select.value;
   var output_unit = output_select.value;
 
-
-
   const { Pa, kPa, hPa, MPa, bar, mbar, psi, psf, ksi, mH2O, cmH2O, ftH2O, inH2O, kgf_cm2, kgf_m2, inHg, cmHg, mmHg, torr, atm } = obtener(input_unit, entrada)
   const units = ['Pa', 'kPa', 'hPa', 'MPa', 'bar', 'mbar', 'psi', 'psf', 'ksi', 'mH2O', 'cmH2O', 'ftH2O', 'inH2O', 'kgf_cm2', 'kgf_m2', 'inHg', 'cmHg', 'mmHg', 'torr', 'atm'];
 
@@ -498,23 +468,29 @@ function operacion(input_unit, output_unit) {
       const unit = units[i];
       const value = eval(unit);
 
-      result1.textContent = `${parseFloat( value.toFixed(6)).toPrecision(6).replace('e', ' ×10^').replace('+', '')} ${output_unit}`;
-      result2.textContent = `${value.toExponential(3).replace('e', ' ×10^').replace('+', '')} ${output_unit}`;
 
+      let valueString = value.toString();
+
+      let partes = valueString.split('.');
+      let unidades = partes[0].length; // almacena la longitud de la parte entera (unidades)
+      let decimales = partes[1] ? partes[1].length : 0;
+
+      console.log("Uniades: " + unidades + " Decimales: " + decimales);
+
+      if (unidades > 7 || decimales > 7) {
+        let separar = value.toExponential(4);
+        let part = separar.split('e');
+        result1.innerHTML = `${value.toExponential(4).replace('e', ' ×10').replace('+', '').replace(`0${parseInt(part[1])}`, `0<sup>${parseInt(part[1])}</sup>`)} ${output_unit}`;
+      }
+      if (unidades <= 7 && decimales <= 7) {
+        result1.textContent = `${value} ${output_unit}`;
+      }
+      result2.textContent = `${value.toExponential(6).replace('e', ' ×10^').replace('+', '')} ${output_unit}`;
     }
-
-
-
-
   }
-
-
 }
 
-
-
 operacion();
-
 control.addEventListener("keyup", () => {
   operacion();
 });
