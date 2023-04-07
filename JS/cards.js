@@ -52,10 +52,9 @@ function form_generate(titulo, unids) {
     unid_ouput.appendChild(fragment_from);
 
     //selected default 
-    const option_select_I = document.querySelector(`#${titulo}I`);
-    const option_select_O = document.querySelector(`#${titulo}O`);
-    option_select_I.options[1].selected = true;
-    option_select_O.options[3].selected = true;
+
+    unid_input.options[1].selected = true;
+    unid_ouput.options[3].selected = true;
 
 }
 
