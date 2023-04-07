@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap");
+html body {
+  display: flex;
+  min-height: 110vh;
+  font-size: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+html body #content_cards {
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 350px;
+}
+html body #content_cards #cards {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1rem;
+}
+html body #content_cards #cards .basic_card {
+  display: grid;
+  border: 1px dotted;
+  padding: 0.5rem;
+  border-radius: 6px;
+  width: 220px;
+  height: 300px;
+  font-family: "Chakra Petch", sans-serif;
+}
+html body #content_cards #cards .basic_card h2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  color: red;
+  font-size: 1.3rem;
+}
+html body #content_cards #cards .basic_card input {
+  style: none;
+  height: 1.5rem;
+  margin-bottom: 0.4rem;
+  border: dotted 1px;
+  border-radius: 2px;
+}
+html body #content_cards #cards .basic_card select {
+  border: dotted 1px;
+  height: 1.5rem;
+  border-radius: 2px;
+  margin-bottom: 0.4rem;
+  background-color: white;
+}
+html body #content_cards #cards .basic_card select .titulo {
+  font-weight: bold;
+  font-size: 16px;
+  color: red;
+}
+html body #content_cards #cards .basic_card select option {
+  font-size: 14px;
+}
+html body #content_cards #cards .basic_card .results {
+  text-align: end;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 20px;
+  align-items: center;
+}
+html body #content_cards #cards .basic_card .results img {
+  transform: rotate(90deg);
+  grid-column: 1/2;
+  border: solid 1px;
+  padding: 2px;
+  border-radius: 50%;
+}
+html body #content_cards #cards .basic_card .results img:hover {
+  transition: 0.5s;
+  box-shadow: 0px 0px 21px 3px rgb(217, 128, 217);
+}
+html body #content_cards #cards .basic_card .results span {
+  grid-column: 2/2;
+  font-size: 15px;
+}/*# sourceMappingURL=indexCSS.css.map */
